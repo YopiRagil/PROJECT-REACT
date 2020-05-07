@@ -6,13 +6,14 @@ import ToolProfil from "./toolProfil";
 class Header extends Component {
   render() {
     return (
-      <div>
-        <nav className="navbar navbar-expand-lg navbar-light">
+      <nav className="navbar navbar-expand-lg navbar-light">
+        <div className="container">
           <a className="navbar-brand" href="#">
             <img
               className="navbar-brand"
               src={require("../media/mlaku.png")}
               class="navbar-brand"
+              style={{ width: "15vmin" }}
             />
           </a>
           <button
@@ -26,15 +27,14 @@ class Header extends Component {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <Search {...this.props} />
             <div className="ml-lg-auto mr-lg-5">
               <ToolProfil {...this.props} />
             </div>
           </div>
-        </nav>
-      </div>
+        </div>
+      </nav>
     );
   }
 }

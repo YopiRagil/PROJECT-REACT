@@ -15,7 +15,6 @@ const ToolProfil = (props) => {
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
-              style={{ fontSize: "20px" }}
             >
               Profil
             </a>

@@ -1,27 +1,28 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Search = () => {
+const Search = (props) => {
   return (
     <section>
+      <div class="form-group row"></div>
+      <h4>{props.title}</h4>
       <form className="form-inline my-2 my-lg-0 ml-sm-5">
-        <div className="form-group row">
-          <div className="col-lg-11">
+        <ul className="navbar-nav">
+          <li className="nav-item">
             <input
-              className="form-control ml-lg-4"
+              className="form-control my-lg-auto mr-sm-2"
               aria-label="Search"
               type="text"
               placeholder="search"
               onChange=""
-              style={{ width: "100%", height: "50px", borderRadius: "15px" }}
-              //   value=""
+              value=""
+              style={{ width: "90vmin" }}
             />
-          </div>
-          <div className="col-lg-1 mr-lg-auto">
+          </li>
+          <li>
             <button
               className="btn my-2 my-sm-0 button-search justify-content-between"
               type="submit"
-              style={{ fontSize: "29px" }}
             >
               <svg
                 className="bi bi-search"
@@ -43,8 +44,8 @@ const Search = () => {
                 />
               </svg>
             </button>
-          </div>
-        </div>
+          </li>
+        </ul>
       </form>
     </section>
   );
