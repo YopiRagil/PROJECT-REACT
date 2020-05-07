@@ -40,7 +40,8 @@ const getWeather = async (dispatch, baseUrlWeather) => {
       type: "SUCCESS_GET_WEATHER",
       payload: response.data.list[0].main.temp - 273,
     });
-    getSeason(response.data.list[0].main.temp - 273);
+    // console.log("ini cek masuk", response.data.list[0].main.temp - 273);
+    getSeason(dispatch, response.data.list[0].main.temp - 273);
   }
 };
 
@@ -54,53 +55,96 @@ export const changeInputSearch = (e) => {
   };
 };
 
-const getSeason = async (temp) => {
+const getSeason = async (dispatch, temp) => {
+  //   console.log("ini cek masuk", temp);
+  //   return async (dispatch) => {
+  //   if (temp) {
+  // dispatch({
   if (temp < 10) {
-    getListProduct("shirt winter");
-    getListProduct("pants winter");
-    getListProduct("jacket winter");
-    getListProduct("shoes winter");
-    getListProduct("hat winter");
+    //   type: "SUCCESS_SEASON",
+    //   payload: "shirt",
+    // });
+    //       dispatch
+    //     getListProduct();
+    //   }
+    getListProduct(dispatch, "shirt winter");
+    getListProduct(dispatch, "pants winter");
+    getListProduct(dispatch, "jacket winter");
+    getListProduct(dispatch, "shoes winter");
+    getListProduct(dispatch, "hat winter");
   } else if (temp >= 10 && temp < 30) {
-    getListProduct("shirt fall");
-    getListProduct("pants fall");
-    getListProduct("jacket fall");
-    getListProduct("shoes fall");
-    getListProduct("hat fall");
+    getListProduct(dispatch, "shirt fall");
+    getListProduct(dispatch, "pants fall");
+    getListProduct(dispatch, "jacket fall");
+    getListProduct(dispatch, "shoes fall");
+    getListProduct(dispatch, "hat fall");
   } else {
-    getListProduct("shirt summer");
-    getListProduct("pants summer");
-    getListProduct("jacket summer");
-    getListProduct("shoes summer");
-    getListProduct("hat summer");
+    getListProduct(dispatch, "shirt summer");
+    getListProduct(dispatch, "pants summer");
+    getListProduct(dispatch, "jacket summer");
+    getListProduct(dispatch, "shoes summer");
+    getListProduct(dispatch, "hat summer");
   }
 };
+// };
 
-export const getListProduct = (keyword) => {
-  return async (dispatch) => {
-    await axios({
-      method: "GET",
-      url: "https://amazon-price1.p.rapidapi.com/search",
-      headers: {
-        "content-type": "application/octet-stream",
-        "x-rapidapi-host": "amazon-price1.p.rapidapi.com",
-        "x-rapidapi-key": "8567d0e4d1msha36250d66c3afa2p1edacejsn2b549c9615dc",
-      },
-      params: {
-        keywords: keyword,
-        marketplace: "US",
-      },
-    })
-      .then(async (response) => {
-        console.log(response);
-        dispatch({ type: "SUCCESS_GET_PRODUCT", payload: response.data });
-      })
-      .catch((error) => {
-        console.log(error);
+export const getListProduct = (dispatch, keyword) => {
+  alert("ini amazon");
+  axios({
+    method: "GET",
+    url: "https://amazon-price1.p.rapidapi.com/search",
+    headers: {
+      "content-type": "application/octet-stream",
+      "x-rapidapi-host": "amazon-price1.p.rapidapi.com",
+      "x-rapidapi-key": "8567d0e4d1msha36250d66c3afa2p1edacejsn2b549c9615dc",
+    },
+    params: {
+      keywords: keyword,
+      marketplace: "US",
+    },
+  })
+    .then((response) => {
+      console.log(response);
+
+      dispatch({
+        type: "SUCCESS_GET_PRODUCT",
+        payload: response.data,
       });
-  };
-};
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  //   return async (dispatch) => {
+  //     try {
+  //       const response = await axios({
+  //         method: "GET",
+  //         url: "https://amazon-price1.p.rapidapi.com/search",
+  //         headers: {
+  //           "content-type": "application/octet-stream",
+  //           "x-rapidapi-host": "amazon-price1.p.rapidapi.com",
+  //           "x-rapidapi-key":
+  //             "8567d0e4d1msha36250d66c3afa2p1edacejsn2b549c9615dc",
+  //         },
+  //         params: {
+  //           keywords: "pants",
+  //           marketplace: "US",
+  //         },
+  //       });
+  //       dispatch({ type: "SUCCESS_GET_PRODUCT", payload: response.data });
+  //     } catch (error) {
+  // console.log("ini keyword", keyword);
 
+  //   console.warn("data amazone", response.data)
+
+  // .then((response) => {
+  //   console.warn("response amazon", response);
+  //   dispatch({ type: "SUCCESS_GET_PRODUCT", payload: response.data });
+  // })
+  //       console.log(error);
+  //     }
+  //   };
+};
+// };
 export const filteringProductCategory = (
   data,
   filter,
