@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 
-// import Home from "../pages/Home";
+import Home from "../pages/Home";
 // import NotMatch from "../pages/NotMatch";
 import Profile from "../pages/Profile";
 import SignIn from "../pages/SignIn";
@@ -14,7 +14,7 @@ const MainRoutes = () => {
     <Provider store={store}>
       <BrowserRouter>
         <Switch>
-          {/* <Route exact path="/" component={Home} /> */}
+          <Route exact path="/" component={Home} />
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/profile" component={Profile} />
           {/* <Route exact path="/news-topic/:topic" component={Home} /> */}
