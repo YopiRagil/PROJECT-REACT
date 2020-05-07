@@ -285,7 +285,7 @@ html {
 }
 
 .profile .card-container .pro {
-  color: #231e39;
+  color: #231e39 important;
   background-color: #febb0b;
   border-radius: 3px;
   font-size: 14px;
