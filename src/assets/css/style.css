@@ -24,6 +24,7 @@
   background: -o-linear-gradient(bottom, #00ffff 0%, #4806e0 100%);
   background: linear-gradient(to right, #00ffff 30%, #4806e0 100%); */
 }
+
 .see-all {
   font-size: 15px;
   font-weight: lighter;
@@ -417,6 +418,11 @@ html {
 /* PRODUCT RESULTS */
 #product-results-div {
   height: 245px;
+  width: 100%;
+}
+
+#product-title {
+  font-size: 30px;
   width: 980px;
 }
 

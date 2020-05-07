@@ -3,43 +3,27 @@ import PropTypes from "prop-types";
 
 const ProductResult = (props) => {
   return (
-    <div
-      className="rounded float-right container mt-5 mb-5"
-      id="product-results-div"
-    >
-      <div className="row">
-        <div className="col-sm-4">
+    <div class="card mb-3" style={{ maxWidth: "540px" }}>
+      <div class="row no-gutters">
+        <div class="col-md-4">
           <img
-            className="img-fluid"
             src={require("../assets/images/product_pic.jpg")}
-            alt="product"
-            id="product-image"
+            class="card-img"
+            alt="..."
           />
         </div>
-        <div className="col-sm-7">
-          <p className="display-4" id="product-title">
-            Carhartt Men's Quilted Flannel Lined Duck Active Jacket{" "}
-          </p>
-          <table class="table table-borderless">
-            <tbody>
-              <tr>
-                <th scope="row">Price</th>
-                <td>65 USD</td>
-              </tr>
-              <tr>
-                <th scope="row">Rating</th>
-                <td>4.6</td>
-              </tr>
-              <tr>
-                <th scope="row">Page</th>
-                <td colspan="2">
-                  <a href="/" target="blank">
-                    See details here
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">
+              Carhartt Men's Quilted Flannel Lined Duck Active Jacket
+            </h5>
+            <p class="card-text">Price : 65 USD</p>
+            <p class="card-text">Rating : 4.6</p>
+            <p class="card-text">Page : See detail Here</p>
+            <p class="card-text">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </p>
+          </div>
         </div>
       </div>
     </div>
