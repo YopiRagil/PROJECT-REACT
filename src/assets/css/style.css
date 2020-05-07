@@ -1,11 +1,20 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
-@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic);
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700);
+@import url(https://fonts.googleapis.com/css?family=Open + Sans:400, 300, 600);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400, 700);
+@import url(
+  https://fonts.googleapis.com/css?family=Droid + Serif:400,
+  700,
+  400italic,
+  700italic
+);
+@import url(
+  https://fonts.googleapis.com/css?family=Roboto + Slab:400,
+  100,
+  300,
+  700
+);
 
-
-*{
-    font-family: 'Open Sans', sans-serif;
+* {
+  font-family: "Open Sans", sans-serif;
 }
 
 .navbar {
@@ -372,16 +381,18 @@ html {
 }
 
 /* HOME */
-#banner-div{
+#banner-div {
   position: relative;
   text-align: center;
   color: white;
 }
 
-#city-banner{
+#city-banner {
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  height: 245px;
-  width: 980px;
+  /* height: 245px;
+  width: 980px; */
 }
 
 .text-block {
@@ -395,22 +406,23 @@ html {
   border-radius: 5px;
 }
 
-#recommendation-title{
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+#recommendation-title {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: bold;
   color: #0b2f91;
 }
 
 /* PRODUCT RESULTS */
-#product-results-div{
+#product-results-div {
   height: 245px;
-  width: 980px; 
+  width: 980px;
 }
 
-#product-title{
+#product-title {
   font-size: xx-large;
 }
-
 
 /* ========================================= SIDEBAR ======================================== */
 .sidebar {
