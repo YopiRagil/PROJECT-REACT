@@ -50,6 +50,7 @@ const Sidebar = (props) => {
                               className="option-input checkbox"
                               name="filter[]"
                               value="men"
+                              onClick={props.checkedFilter}
                             />
                             <span className="ml-10">Men</span>
                           </label>
@@ -61,6 +62,7 @@ const Sidebar = (props) => {
                               className="option-input checkbox"
                               name="filter[]"
                               value="women"
+                              onClick={props.checkedFilter}
                             />
 
                             <span className="ml-10">Women</span>
@@ -102,6 +104,7 @@ const Sidebar = (props) => {
                               className="option-input checkbox"
                               name="filter[]"
                               value="jacket"
+                              onClick={props.checkedFilter}
                             />
                             <span className="ml-10">Jacket</span>
                           </label>
@@ -113,6 +116,7 @@ const Sidebar = (props) => {
                               className="option-input checkbox"
                               name="filter[]"
                               value="shirt"
+                              onClick={props.checkedFilter}
                             />
                             <span className="ml-10">Shirt</span>
                           </label>
@@ -124,6 +128,7 @@ const Sidebar = (props) => {
                               className="option-input checkbox"
                               name="filter[]"
                               value="hat"
+                              onClick={props.checkedFilter}
                             />
                             <span className="ml-10">Hat</span>
                           </label>
@@ -134,7 +139,8 @@ const Sidebar = (props) => {
                               type="checkbox"
                               className="option-input checkbox"
                               name="filter[]"
-                              value="12"
+                              value="shoe"
+                              onClick={props.checkedFilter}
                             />
                             <span className="ml-10">Shoe</span>
                           </label>
@@ -145,7 +151,8 @@ const Sidebar = (props) => {
                               type="checkbox"
                               className="option-input checkbox"
                               name="filter[]"
-                              value="12"
+                              value="pants"
+                              onClick={props.checkedFilter}
                             />
                             <span className="ml-10">Pants</span>
                           </label>
@@ -233,6 +240,8 @@ const Sidebar = (props) => {
                                 class="form-control"
                                 id="inputEmail4"
                                 placeholder="$0"
+                                name="minPrice"
+                                onChange={props.changeInputFilter}
                               />
                             </div>
                             <div class="form-group col-md-6 text-right">
@@ -241,6 +250,8 @@ const Sidebar = (props) => {
                                 type="number"
                                 class="form-control"
                                 placeholder="$1,0000"
+                                name="maxPrice"
+                                onChange={props.changeInputFilter}
                               />
                             </div>
                           </div>
@@ -278,8 +289,9 @@ const Sidebar = (props) => {
                             <input
                               type="radio"
                               className="option-input input-radio radio"
-                              name="filter[]"
+                              name="rating"
                               value="4"
+                              onClick={props.changeInputFilter}
                             />
                             <span className="ml-10">
                               <i class="fa fa-star"></i>
@@ -294,8 +306,9 @@ const Sidebar = (props) => {
                             <input
                               type="radio"
                               className="option-input input-radio radio"
-                              name="filter[]"
+                              name="rating"
                               value="3"
+                              onClick={props.changeInputFilter}
                             />
 
                             <span className="ml-10">
@@ -310,8 +323,9 @@ const Sidebar = (props) => {
                             <input
                               type="radio"
                               className="option-input input-radio radio"
-                              name="filter[]"
+                              name="rating"
                               value="2"
+                              onClick={props.changeInputFilter}
                             />
 
                             <span className="ml-10">
@@ -325,8 +339,9 @@ const Sidebar = (props) => {
                             <input
                               type="radio"
                               className="option-input input-radio radio"
-                              name="filter[]"
+                              name="rating"
                               value="1"
+                              onClick={props.changeInputFilter}
                             />
 
                             <span className="ml-10">
@@ -339,7 +354,10 @@ const Sidebar = (props) => {
                   </div>
 
                   <div className="text-right refine signin">
-                    <button class="btn btn--pill btn--green" onClick={{}}>
+                    <button
+                      class="btn btn--pill btn--green"
+                      onClick={props.filterProduct}
+                    >
                       FILTER
                     </button>
                   </div>
@@ -353,12 +371,12 @@ const Sidebar = (props) => {
   );
 };
 
-Sidebar.propTypes = {
-  title: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-  published: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-};
+// Sidebar.propTypes = {
+//   title: PropTypes.string.isRequired,
+//   url: PropTypes.string.isRequired,
+//   published: PropTypes.string.isRequired,
+//   description: PropTypes.string.isRequired,
+//   image: PropTypes.string.isRequired,
+// };
 
 export default Sidebar;

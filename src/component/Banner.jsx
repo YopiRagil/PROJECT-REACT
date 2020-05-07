@@ -20,7 +20,7 @@ const Banner = (props) => {
       <img
         className="img-fluid"
         // if ()
-        src={props.img.jumbotronImg}
+        src={props.img}
         alt="city banner"
         id="city-banner"
       />
@@ -39,11 +39,11 @@ const Banner = (props) => {
 };
 // }
 
-const mapStateToProps = (state) => {
-  return {
-    img: state.product,
-  };
-};
-export default connect(mapStateToProps)(Banner);
+// const mapStateToProps = (state) => {
+//   return {
+//     img: state.product,
+//   };
+// };
+export default Banner;
 
 // export default Banner;
