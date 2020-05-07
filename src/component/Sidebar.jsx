@@ -7,7 +7,7 @@ const Sidebar = (props) => {
       <div className="page-wrapper bg-gra-03 sidebar font-poppins">
         <div className="container">
           <div className="row">
-            <div className="col-md-4">
+            <div className="col-md-10">
               <div className="wrapper center-block hidden-xs">
                 <div className="filters-text">
                   <span className="filter-span">FILTERS</span>
