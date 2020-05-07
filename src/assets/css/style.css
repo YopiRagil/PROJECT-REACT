@@ -1,11 +1,20 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
-@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic);
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700);
+@import url(https://fonts.googleapis.com/css?family=Open + Sans:400, 300, 600);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400, 700);
+@import url(
+  https://fonts.googleapis.com/css?family=Droid + Serif:400,
+  700,
+  400italic,
+  700italic
+);
+@import url(
+  https://fonts.googleapis.com/css?family=Roboto + Slab:400,
+  100,
+  300,
+  700
+);
 
-
-*{
-    font-family: 'Open Sans', sans-serif;
+* {
+  font-family: "Open Sans", sans-serif;
 }
 
 .navbar {
@@ -15,6 +24,7 @@
   background: -o-linear-gradient(bottom, #00ffff 0%, #4806e0 100%);
   background: linear-gradient(to right, #00ffff 30%, #4806e0 100%); */
 }
+
 .see-all {
   font-size: 15px;
   font-weight: lighter;
@@ -372,13 +382,13 @@ html {
 }
 
 /* HOME */
-#banner-div{
+#banner-div {
   position: relative;
   text-align: center;
   color: white;
 }
 
-#city-banner{
+#city-banner {
   background-repeat: no-repeat;
   height: 245px;
   width: 980px;
@@ -395,22 +405,23 @@ html {
   border-radius: 5px;
 }
 
-#recommendation-title{
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+#recommendation-title {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: bold;
   color: #0b2f91;
 }
 
 /* PRODUCT RESULTS */
-#product-results-div{
+#product-results-div {
   height: 245px;
-  width: 980px; 
+  width: 100%;
 }
 
-#product-title{
-  font-size: xx-large;
+#product-title {
+  font-size: 30px;
 }
-
 
 /* ========================================= SIDEBAR ======================================== */
 .sidebar {
