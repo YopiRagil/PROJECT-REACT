@@ -1,0 +1,28 @@
+/* navbar */
+/* .button-search {
+  border-color: none;
+} */
+.navbar-brand {
+  width: 150px;
+}
+.navbar {
+  background-color: #5bffff;
+}
+.see-all {
+  font-size: 15px;
+  font-weight: lighter;
+}
+.img-berita {
+  width: 100%;
+}
+.isi-berita {
+  font-size: 15px;
+  font-weight: lighter;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.upload-time {
+  font-size: 12px;
+  font-weight: lighter;
+  color: gray;
+}
