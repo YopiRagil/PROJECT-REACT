@@ -6,6 +6,7 @@ import {
   doSearch,
   changeInputSearch,
   filteringProductCategory,
+  getListProduct,
 } from "../store/actions/productAction";
 
 // import { logoutUser } from "../store/actions/userAction";
@@ -28,6 +29,7 @@ class Home extends Component {
     return (
       <div>
         <Header
+          getList={(keyword) => getListProduct(keyword)}
           doSearch={(event) => this.props.changeInputSearch(event)}
           {...this.props}
         />
@@ -87,6 +89,7 @@ const mapDispatchToProps = {
   changeInputSearch: (e) => changeInputSearch(e),
   filteringProductCategory: (data, filter, minPrice, maxPrice, rate) =>
     filteringProductCategory(data, filter, minPrice, maxPrice, rate),
+  getListProduct: (keyword) => getListProduct(keyword),
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

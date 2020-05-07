@@ -11,8 +11,8 @@ const Search = (props) => {
           type="text"
           name="search"
           placeholder="masukkan destinasi tujuan anda"
-          onChange=""
-          value={props.keyword}
+          onChange={props.doSearch}
+          // value=
           aria-label="Search"
           style={{ width: "86%" }}
         />
