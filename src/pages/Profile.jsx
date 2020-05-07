@@ -31,7 +31,7 @@ class Profile extends Component {
           <div class="page-wrapper bg-gra-02 profile font-poppins">
             <div class="card-container">
               <span class="pro">PRO</span>
-              <img src={require("../images/ava.jpeg")} alt="user" />
+              <img src={require("../assets/images/ava.jpeg")} alt="user" />
               <h3>Fazlur Rahman</h3>
               <h6>Malang</h6>
               <p>Full Stack Developer</p>

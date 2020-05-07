@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "../style/style.css";
-import Search from "./search";
-import ToolProfil from "./toolProfil";
+// import "../style/style.css";
+import Search from "./Search";
+import ToolProfil from "./ToolProfil";
 
 class Header extends Component {
   render() {
@@ -11,8 +11,9 @@ class Header extends Component {
           <a className="navbar-brand" href="#">
             <img
               className="navbar-brand"
-              src={require("../media/mlaku.png")}
+              src={require("../assets/images/mlaku.png")}
               class="navbar-brand"
+              alt="logo"
               style={{ width: "15vmin" }}
             />
           </a>
