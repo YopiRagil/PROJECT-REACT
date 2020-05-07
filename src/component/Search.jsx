@@ -15,13 +15,13 @@ const Search = (props) => {
               type="text"
               style={{ fontWeight: "lighter" }}
               placeholder="masukkan nama kota/ tujuan destinasi"
-              onChange=""
+              onChange={props.doSearch}
               // value=""
               style={{ width: "120vmin" }}
             />
           </li>
           <li>
-            <button
+            {/* <button
               className="btn my-2 my-sm-0 button-search justify-content-between"
               type="submit"
             >
@@ -44,7 +44,7 @@ const Search = (props) => {
                   clip-rule="evenodd"
                 />
               </svg>
-            </button>
+            </button> */}
           </li>
         </ul>
       </form>
