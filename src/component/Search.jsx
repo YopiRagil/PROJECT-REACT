@@ -13,10 +13,11 @@ const Search = (props) => {
               className="form-control my-lg-auto mr-sm-2"
               aria-label="Search"
               type="text"
-              placeholder="search"
+              style={{ fontWeight: "lighter" }}
+              placeholder="masukkan nama kota/ tujuan destinasi"
               onChange=""
-              value=""
-              style={{ width: "90vmin" }}
+              // value=""
+              style={{ width: "120vmin" }}
             />
           </li>
           <li>
