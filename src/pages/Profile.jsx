@@ -28,6 +28,7 @@ class Profile extends Component {
     } else {
       return (
         <React.Fragment>
+          {/* {console.log("test2", this.props)} */}
           <div className="page-wrapper bg-gra-02 profile font-poppins">
             <div className="card-container">
               <span className="pro">PRO</span>
