@@ -29,7 +29,7 @@ const ToolProfil = (props) => {
                 className="dropdown-menu mr-lg-auto"
                 aria-labelledby="navbarDropdown"
                 style={{
-                  marginLeft: "-30px",
+                  marginLeft: "-10vmin",
                   background: "DarkSlateGray",
                   borderRadius: "10px",
                 }}
