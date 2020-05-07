@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 // import { logoutUser } from "../store/actions/userAction";
+
 import Header from "../component/Header"
 import Banner from "../component/Banner"
 import ProductResult from "../component/ProductResult"
@@ -22,6 +23,7 @@ class Home extends Component {
             </div>
         )
     }
+
 }
 
 export default withRouter(Home);
