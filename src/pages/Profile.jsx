@@ -28,22 +28,22 @@ class Profile extends Component {
     } else {
       return (
         <React.Fragment>
-          <div class="page-wrapper bg-gra-02 profile font-poppins">
-            <div class="card-container">
-              <span class="pro">PRO</span>
-              <img src={require("../assets/images/ava.jpeg")} alt="user" />
-              <h3>Fazlur Rahman</h3>
-              <h6>Malang</h6>
-              <p>Full Stack Developer</p>
-              <div class="buttons mb-5">
-                <button class="primary" onClick={this.goHome}>
+          <div className="page-wrapper bg-gra-02 profile font-poppins">
+            <div className="card-container">
+              <span className="pro">PRO</span>
+              <img src={this.props.dataUser.avatar} alt="user" />
+              <h3>{this.props.dataUser.name}</h3>
+              <h6>{this.props.dataUser.city}</h6>
+              <p>{this.props.dataUser.job}</p>
+              <div className="buttons mb-5">
+                <button className="primary" onClick={this.goHome}>
                   Home
                 </button>
-                <button class="primary ghost" onClick={this.logOut}>
+                <button className="primary ghost" onClick={this.logOut}>
                   Logout
                 </button>
               </div>
-              {/* <div class="skills">
+              {/* <div className="skills">
         <h6>Skills</h6>
         <ul>
           <li>Python</li>
