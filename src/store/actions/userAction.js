@@ -8,7 +8,7 @@ export const doLogin = (props) => {
     };
 
     await axios
-      .post("https://atareact.free.beeceptor.com/auth", bodyRequest)
+      .post("https://5eabeaa0a280ac001665771e.mockapi.io/login", bodyRequest)
       .then(async (response) => {
         if (response.data.hasOwnProperty("api_key")) {
           dispatch({ type: "SUCCESS_LOGIN", payload: response.data });
