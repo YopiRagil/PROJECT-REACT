@@ -1,6 +1,10 @@
 const initialState = {
-  full_name: "",
+  name: "",
+  avatar: "",
+  city: "",
+  job: "",
   email: "",
+  full_name: "",
   api_key: "",
   login_status: false,
   userName: "",
@@ -17,8 +21,12 @@ export default function userReducer(userState = initialState, action) {
     case "SUCCESS_LOGIN":
       return {
         ...userState,
-        full_name: action.payload.full_name,
+        name: action.payload.name,
+        avatar: action.payload.avatar,
+        city: action.payload.city,
+        job: action.payload.profession,
         email: action.payload.email,
+        full_name: action.payload.full_name,
         api_key: action.payload.api_key,
         login_status: true,
       };
