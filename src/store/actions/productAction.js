@@ -60,19 +60,23 @@ const getSeason = async (dispatch, temp) => {
   //   return async (dispatch) => {
   //   if (temp) {
   // dispatch({
+  //   type: "SUCCESS_SEASON",
+  //   payload: "shirt",
+  // });
+  //       dispatch
+  //     getListProduct();
+  //   }
+  //   if (temp) {
+  dispatch({ type: "RESET_LIST_PRODUCT" });
   if (temp < 10) {
-    //   type: "SUCCESS_SEASON",
-    //   payload: "shirt",
-    // });
-    //       dispatch
-    //     getListProduct();
-    //   }
+    // dispatch({ type : "RESET_LIST_PRODUCT"})
     getListProduct(dispatch, "shirt winter");
     getListProduct(dispatch, "pants winter");
     getListProduct(dispatch, "jacket winter");
     getListProduct(dispatch, "shoes winter");
     getListProduct(dispatch, "hat winter");
   } else if (temp >= 10 && temp < 30) {
+    //   dispatch({ type : "RESET_LIST_PRODUCT"})
     getListProduct(dispatch, "shirt fall");
     getListProduct(dispatch, "pants fall");
     getListProduct(dispatch, "jacket fall");
@@ -89,7 +93,8 @@ const getSeason = async (dispatch, temp) => {
 // };
 
 export const getListProduct = (dispatch, keyword) => {
-  alert("ini amazon");
+  //   keyword ? (keyword = "london") : (keyword = keyword);
+  //   alert("ini amazon");
   axios({
     method: "GET",
     url: "https://amazon-price1.p.rapidapi.com/search",

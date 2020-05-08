@@ -23,6 +23,7 @@ const Banner = (props) => {
         src={props.img}
         alt="city banner"
         id="city-banner"
+        // onClick={ = "london"}
       />
       {/* </Link> */}
       <div className="text-block">
