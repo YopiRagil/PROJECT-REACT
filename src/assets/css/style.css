@@ -709,3 +709,10 @@ html {
 .sidebar .input-radio {
   top: 5px;
 }
+
+/* FOOTER */
+
+#sticky-footer {
+  flex-shrink: none;
+  color: white;
+}

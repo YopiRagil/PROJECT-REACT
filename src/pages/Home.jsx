@@ -19,6 +19,7 @@ import Header from "../component/Header";
 import Banner from "../component/Banner";
 import ProductResult from "../component/ProductResult";
 import Sidebar from "../component/Sidebar";
+import Footer from "../component/Footer";
 
 class Home extends Component {
   componentDidMount = async () => {
@@ -145,6 +146,7 @@ class Home extends Component {
             )}
           </div>
         </div>
+        <Footer />
       </div>
       // console.warn("props", this.props);
     );
