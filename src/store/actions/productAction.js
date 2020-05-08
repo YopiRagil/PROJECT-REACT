@@ -9,13 +9,13 @@ export const doSearch = (city) => {
   if (city) {
     baseUrl = url + "&q=" + city;
     baseUrlWeather =
-      "http://api.openweathermap.org/data/2.5/forecast?&appid=e550e9c5992a20dab607197e7218147d&q=" +
+      "https://api.openweathermap.org/data/2.5/forecast?&appid=e550e9c5992a20dab607197e7218147d&q=" +
       city;
   } else {
     baseUrl =
       "https://pixabay.com/api/?key=16404974-406583d3b1be0ca0827f1f82f&q=london&category=places&orientation=horizontal";
     baseUrlWeather =
-      "http://api.openweathermap.org/data/2.5/forecast?&appid=e550e9c5992a20dab607197e7218147d&q=london";
+      "https://api.openweathermap.org/data/2.5/forecast?&appid=e550e9c5992a20dab607197e7218147d&q=london";
   }
   return async (dispatch) => {
     getJumbotronImage(dispatch, baseUrl);
