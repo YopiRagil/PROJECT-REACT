@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Sidebar = (props) => {
   return (
@@ -43,29 +44,46 @@ const Sidebar = (props) => {
                       aria-labelledby="heading1"
                     >
                       <div className="panel-body">
-                        <div className="checkbox">
+                        <div className="radio">
                           <label>
                             <input
-                              type="checkbox"
-                              className="option-input checkbox"
-                              name="filter[]"
-                              value="men"
-                              onClick={props.checkedFilter}
+                              type="radio"
+                              className="option-input radio"
+                              name="gender"
+                              style={{top : "8px"}}
+                              value="Men"
+                              onChange={() => props.changeRouter("men")}
+                              // onChange={props.checkedFilter}
+                              onClick={props.changeInputFilter}
                             />
+                            {/* <Link
+                              value="men"
+                              onClick={() => props.changeRouter("men")}
+                              className="nav-link"
+                            > */}
                             <span className="ml-10">Men</span>
+                            {/* </Link> */}
                           </label>
                         </div>
-                        <div className="checkbox">
+                        <div className="radio">
                           <label>
                             <input
-                              type="checkbox"
-                              className="option-input checkbox"
-                              name="filter[]"
-                              value="women"
-                              onClick={props.checkedFilter}
+                              type="radio"
+                              className="option-input radio"
+                              style={{top : "8px"}}
+                              name="gender"
+                              value="Women"
+                              onChange={() => props.changeRouter("women")}
+                              // onChange={props.checkedFilter}
+                              onClick={props.changeInputFilter}
                             />
-
+                            {/* <Link
+                              value="women"
+                              onClick={() => props.changeRouter("women")}
+                              className="nav-link"
+                            > */}
                             <span className="ml-10">Women</span>
+                            {/* </Link> */}
                           </label>
                         </div>
                       </div>
@@ -353,14 +371,14 @@ const Sidebar = (props) => {
                     </div>
                   </div>
 
-                  <div className="text-right refine signin">
+                  {/* <div className="text-right refine signin">
                     <button
                       class="btn btn--pill btn--green"
                       onClick={props.filterProduct}
                     >
                       FILTER
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

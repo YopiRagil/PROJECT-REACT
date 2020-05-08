@@ -1,16 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Open + Sans:400, 300, 600);
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400, 700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(
-  https://fonts.googleapis.com/css?family=Droid + Serif:400,
-  700,
-  400italic,
-  700italic
+  https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic
 );
 @import url(
-  https://fonts.googleapis.com/css?family=Roboto + Slab:400,
-  100,
-  300,
-  700
+  https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700
 );
 
 * {
@@ -19,10 +13,10 @@
 
 .navbar {
   background-color: #00ffff;
-  /* background: -webkit-linear-gradient(bottom, #00ffff 0%, #4806e0 100%);
+  background: -webkit-linear-gradient(bottom, #00ffff 0%, #4806e0 100%);
   background: -moz-linear-gradient(bottom, #00ffff 0%, #4806e0 100%);
   background: -o-linear-gradient(bottom, #00ffff 0%, #4806e0 100%);
-  background: linear-gradient(to right, #00ffff 30%, #4806e0 100%); */
+  background: linear-gradient(to right, #00ffff 30%, #4806e0 100%);
 }
 
 .see-all {
@@ -245,6 +239,12 @@ html {
 }
 
 @media (max-width: 767px) {
+  #city-banner {
+    margin-top: 10px;
+  }
+  .col-sm-4 .page-wrapper {
+    min-height: 0;
+  }
   .signin .card-3 {
     display: block;
   }
@@ -535,7 +535,7 @@ html {
   -o-appearance: none;
   appearance: none;
   position: relative;
-  top: -8.66667px;
+  top: -8px;
   right: 0;
   bottom: 0;
   left: 0;
