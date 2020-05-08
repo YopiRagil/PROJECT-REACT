@@ -2,24 +2,32 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const ProductResult = (props) => {
+  const { title, imageUrl, price, rating, detailPageURL } = props;
   return (
-    <div class="card mb-3" style={{ maxWidth: "540px" }}>
+    <div class="card mb-3">
       <div class="row no-gutters">
         <div class="col-md-4">
           <img
-            src={require("../assets/images/product_pic.jpg")}
-            class="card-img"
+            // src={imageUrl}
+            src={imageUrl}
+            class="card-img p-4"
             alt="..."
           />
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title">
-              Carhartt Men's Quilted Flannel Lined Duck Active Jacket
-            </h5>
-            <p class="card-text">Price : 65 USD</p>
-            <p class="card-text">Rating : 4.6</p>
-            <p class="card-text">Page : See detail Here</p>
+            <h5 class="card-title">{title}</h5>
+            <p class="card-text">Price : {price}</p>
+            {/* <p class="card-text">Price : {price}</p> */}
+            <p class="card-text">Rating : {rating}</p>
+            {/* <p class="card-text">Rating :{rating}</p> */}
+            <p class="card-text">
+              Page : See detail{" "}
+              <a href={detailPageURL} target="blank">
+                Here
+              </a>
+            </p>
+            {/* <p class="card-text">Page : {detailPageURL}</p> */}
             <p class="card-text">
               <small class="text-muted">Last updated 3 mins ago</small>
             </p>
