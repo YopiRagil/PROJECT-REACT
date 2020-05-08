@@ -72,48 +72,49 @@ class Home extends Component {
             OUR RECOMMENDATIONS
           </p>
         </div>
-       <div className="container-fluid">
-        <div className="row">
-          <div className="col-sm-4">
-            <Sidebar
-              listProduct={this.props.product.listProduct}
-              data={this.props.product}
-              filter={this.props.filterState}
-              checkedFilter={(e) => this.props.checkedFilter(e)}
-              changeInputFilter={(e) => this.props.changeInputFilter(e)}
-              filterProduct={(data, filter, minPrice, maxPrice, rate) =>
-                filteringProductCategory(
-                  this.props.data,
-                  this.props.filter,
-                  this.props.minPrice,
-                  this.props.maxPrice,
-                  this.props.rate
-                )
-              }
-              {...this.props}
-            />
-          </div>
-          {this.props.product.search.length == 0 ? (
-            <div className="col-sm-8">
-              <Banner img={this.props.img} {...this.props} />
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-sm-4">
+              <Sidebar
+                listProduct={this.props.product.listProduct}
+                data={this.props.product}
+                filter={this.props.filterState}
+                checkedFilter={(e) => this.props.checkedFilter(e)}
+                changeInputFilter={(e) => this.props.changeInputFilter(e)}
+                filterProduct={(data, filter, minPrice, maxPrice, rate) =>
+                  filteringProductCategory(
+                    this.props.data,
+                    this.props.filter,
+                    this.props.minPrice,
+                    this.props.maxPrice,
+                    this.props.rate
+                  )
+                }
+                {...this.props}
+              />
             </div>
-          ) : (
-            <div className="col-sm-8">
-              <Banner img={this.props.img} {...this.props} />
+            {this.props.product.search.length == 0 ? (
+              <div className="col-sm-8">
+                <Banner img={this.props.img} {...this.props} />
+              </div>
+            ) : (
+              <div className="col-sm-8">
+                <Banner img={this.props.img} {...this.props} />
 
-              {listProduct.map((item, index) => (
-                <ProductResult
-                  title={listProduct[index].title}
-                  imageUrl={listProduct[index].imageUrl}
-                  price={listProduct[index].price}
-                  rating={listProduct[index].rating}
-                  detailPageURL={listProduct[index].detailPageURL}
-                />
-              ))}
-              {/* <ProductResult />
+                {listProduct.map((item, index) => (
+                  <ProductResult
+                    title={listProduct[index].title}
+                    imageUrl={listProduct[index].imageUrl}
+                    price={listProduct[index].price}
+                    rating={listProduct[index].rating}
+                    detailPageURL={listProduct[index].detailPageURL}
+                  />
+                ))}
+                {/* <ProductResult />
               <ProductResult /> */}
-            </div>
-          )}
+              </div>
+            )}
+          </div>
         </div>
       </div>
       // console.warn("props", this.props);
