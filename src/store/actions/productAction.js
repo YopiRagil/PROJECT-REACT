@@ -1,21 +1,17 @@
 import axios from "axios";
 
-const url =
-  "https://pixabay.com/api/?key=16404974-406583d3b1be0ca0827f1f82f&category=places&orientation=horizontal";
+const url = process.env.REACT_APP_PIXABAY
+const urlWeather = process.env.REACT_APP_WEATHER
 
 let baseUrl;
 let baseUrlWeather;
 export const doSearch = (city) => {
   if (city) {
     baseUrl = url + "&q=" + city;
-    baseUrlWeather =
-      "https://api.openweathermap.org/data/2.5/forecast?&appid=e550e9c5992a20dab607197e7218147d&q=" +
-      city;
+    baseUrlWeather = urlWeather + "&q=" + city;
   } else {
-    baseUrl =
-      "https://pixabay.com/api/?key=16404974-406583d3b1be0ca0827f1f82f&q=london&category=places&orientation=horizontal";
-    baseUrlWeather =
-      "https://api.openweathermap.org/data/2.5/forecast?&appid=e550e9c5992a20dab607197e7218147d&q=london";
+    baseUrl =process.env.REACT_APP_PIXABAY_DEFAULT
+    baseUrlWeather = process.env.REACT_APP_WEATHER_DEFAULT
   }
   return async (dispatch) => {
     getJumbotronImage(dispatch, baseUrl);
@@ -97,11 +93,11 @@ export const getListProduct = (dispatch, keyword) => {
   //   alert("ini amazon");
   axios({
     method: "GET",
-    url: "https://amazon-price1.p.rapidapi.com/search",
+    url: process.env.REACT_APP_AMAZON_URL,
     headers: {
-      "content-type": "application/octet-stream",
-      "x-rapidapi-host": "amazon-price1.p.rapidapi.com",
-      "x-rapidapi-key": "8567d0e4d1msha36250d66c3afa2p1edacejsn2b549c9615dc",
+      "content-type": process.env.REACT_APP_AMAZON_CONTENT_TYPE,
+      "x-rapidapi-host": process.env.REACT_APP_AMAZON_HOST,
+      "x-rapidapi-key": process.env.REACT_APP_AMAZON_KEY,
     },
     params: {
       keywords: keyword,
