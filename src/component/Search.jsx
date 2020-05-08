@@ -8,6 +8,12 @@ const Search = (props) => {
       <form className="form-inline my-2" action="#">
         <input
           className="form-control my-lg-auto mr-sm-2"
+          type="text"
+          name="search"
+          placeholder="masukkan destinasi tujuan anda"
+          onChange={props.doSearch}
+          // value=
+
           aria-label="Search"
           type="text"
           style={{ fontWeight: "lighter" }}
