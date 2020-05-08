@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-// import { withRouter } from "react-router-dom";
-// import { Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import {
   doSearch,
@@ -13,6 +12,7 @@ import {
 import {
   checkedFilter,
   changeInputFilter,
+  checkedGender,
 } from "../store/actions/filterAction";
 
 import Header from "../component/Header";
@@ -21,12 +21,41 @@ import ProductResult from "../component/ProductResult";
 import Sidebar from "../component/Sidebar";
 
 class Home extends Component {
-  componentDidMount() {
+  componentDidMount = async () => {
+    // const paramCategory = await this.props.match.params.gender;
     this.props.getImg();
-  }
+  };
+
+  handleRequestGender = async (gender) => {
+    await this.props.history.replace("/your-gender/" + gender);
+    const paramCategory = await this.props.match.params.gender;
+    this.props.changeGender(paramCategory);
+    // this.props.checkedFilter();
+  };
+
+  changeRouter = async (gender) => {
+    // condition when handleRouter undefined/not
+    if (this.props.handleRequestGender) {
+      this.props.handleRequestGender(gender);
+      this.props.checkedFilter();
+    } else {
+      // redirect pages to endpoint news-topic
+      await this.props.history.replace("/your-gender/" + gender);
+    }
+  };
+
   render() {
-    console.log("cek2", this.props.img.jumbotronImg);
-    console.warn("props data", this.props.data);
+    if (!this.props.login) {
+      return (
+        <Redirect
+          to={{
+            pathname: "/signin",
+          }}
+        />
+      );
+    } else {
+    // console.log("cek2", this.props.img.jumbotronImg);
+    // console.warn("props data", this.props.data);
 
     let listProduct = this.props.data;
     const listProductFilter = this.props.data.filter((item) => {
@@ -38,6 +67,14 @@ class Home extends Component {
 
     if (this.props.filter.length !== 0) {
       listProduct = listProductFilter;
+    }
+    if (this.props.gender) {
+      listProduct = listProduct.filter((item) => {
+        if (item.title.includes(this.props.gender)) {
+          return item;
+        }
+        return false;
+      });
     }
     if (this.props.rate) {
       listProduct = listProduct.filter((item) => {
@@ -81,15 +118,7 @@ class Home extends Component {
                 filter={this.props.filterState}
                 checkedFilter={(e) => this.props.checkedFilter(e)}
                 changeInputFilter={(e) => this.props.changeInputFilter(e)}
-                filterProduct={(data, filter, minPrice, maxPrice, rate) =>
-                  filteringProductCategory(
-                    this.props.data,
-                    this.props.filter,
-                    this.props.minPrice,
-                    this.props.maxPrice,
-                    this.props.rate
-                  )
-                }
+                changeRouter={(e) => this.changeRouter(e)}
                 {...this.props}
               />
             </div>
@@ -121,6 +150,7 @@ class Home extends Component {
     );
   }
 }
+}
 const mapStateToProps = (state) => {
   return {
     filterState: state.filter,
@@ -131,6 +161,8 @@ const mapStateToProps = (state) => {
     minPrice: state.filter.minPrice,
     maxPrice: state.filter.maxPrice,
     rate: state.filter.rating,
+    gender: state.filter.gender,
+    login: state.user.login_status,
   };
 };
 
@@ -139,6 +171,8 @@ const mapDispatchToProps = {
   checkedFilter: (e) => checkedFilter(e),
   changeInputFilter: (e) => changeInputFilter(e),
   changeInputSearch: (e) => changeInputSearch(e),
+  changeGender: (e) => checkedGender(e),
+
   filteringProductCategory: (data, filter, minPrice, maxPrice, rate) =>
     filteringProductCategory(data, filter, minPrice, maxPrice, rate),
   getListProduct: (keyword) => getListProduct(keyword),
