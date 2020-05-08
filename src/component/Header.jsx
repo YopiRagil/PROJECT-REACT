@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // import "../style/style.css";
 import Search from "./Search";
+import { Link } from "react-router-dom";
 import ToolProfil from "./ToolProfil";
 
 class Header extends Component {
@@ -8,7 +9,7 @@ class Header extends Component {
     return (
       <nav className="navbar navbar-expand-lg navbar-light">
         {/* <div className="container"> */}
-        <a className="navbar-brand ml-lg-5" href="#">
+        <Link to="/" className="navbar-brand ml-lg-5" href="#">
           <img
             className="navbar-brand"
             src={require("../assets/images/mlaku.png")}
@@ -16,7 +17,7 @@ class Header extends Component {
             alt="logo"
             style={{ width: "15vmin" }}
           />
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"

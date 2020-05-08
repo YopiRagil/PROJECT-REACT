@@ -68,8 +68,11 @@ class Home extends Component {
           {...this.props}
         />
         <div className="text-center mt-4" id="recommendation-title">
-          <h1>OUR RECOMMENDATIONS</h1>
+          <p style={{ fontWeight: "bolder", fontSize: "8vmin" }}>
+            OUR RECOMMENDATIONS
+          </p>
         </div>
+       <div className="container-fluid">
         <div className="row">
           <div className="col-sm-4">
             <Sidebar

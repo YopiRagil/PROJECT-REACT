@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const ProductResult = (props) => {
   const { title, imageUrl, price, rating, detailPageURL } = props;
   return (
-    <div class="card mb-3">
+    <div class="card mb-3 ml-3" style={{ maxWidth: "96.5%" }}>
       <div class="row no-gutters">
         <div class="col-md-4">
           <img
@@ -12,6 +12,7 @@ const ProductResult = (props) => {
             src={imageUrl}
             class="card-img p-4"
             alt="..."
+            style={{ Weight: "auto" }}
           />
         </div>
         <div class="col-md-8">

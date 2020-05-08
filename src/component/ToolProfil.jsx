@@ -4,6 +4,11 @@ import { logoutUser } from "../store/actions/userAction";
 import { Link } from "react-router-dom";
 
 const ToolProfil = (props) => {
+  const logOut = async () => {
+    // console.warn("cek propslogout", this.props);
+    await props.logoutUser();
+    props.history.push("/signin");
+  };
   return (
     <section>
       {console.log("testing", props.login)}
@@ -29,7 +34,7 @@ const ToolProfil = (props) => {
                 className="dropdown-menu mr-lg-auto"
                 aria-labelledby="navbarDropdown"
                 style={{
-                  marginLeft: "-30px",
+                  marginLeft: "-10vmin",
                   background: "DarkSlateGray",
                   borderRadius: "10px",
                 }}
@@ -54,10 +59,26 @@ const ToolProfil = (props) => {
                   {props.dataUser.name}
                 </Link>
                 <hr />
-                <p style={{ textAlign: "center", color: "white" }}>Setting</p>
-                <p style={{ textAlign: "center", color: "white" }}>Account</p>
+                <p style={{ textAlign: "center", color: "white" }}>
+                  <Link
+                    href="#"
+                    className="dropdown-item"
+                    style={{ textAlign: "center", color: "white" }}
+                  >
+                    Setting
+                  </Link>
+                </p>
+                <p style={{ textAlign: "center", color: "white" }}>
+                  <Link
+                    href="#"
+                    className="dropdown-item"
+                    style={{ textAlign: "center", color: "white" }}
+                  >
+                    Account
+                  </Link>
+                </p>
                 <Link
-                  to="/profile"
+                  onClick={logOut}
                   className="dropdown-item"
                   style={{ textAlign: "center", color: "white" }}
                 >
