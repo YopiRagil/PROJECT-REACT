@@ -3,6 +3,7 @@ const initialState = {
   rating: 0,
   minPrice: 0,
   maxPrice: 0,
+  gender: "",
 };
 
 export default function filterReducer(filterState = initialState, action) {
@@ -11,6 +12,12 @@ export default function filterReducer(filterState = initialState, action) {
       return {
         ...filterState,
         [action.payload.target.name]: action.payload.target.value,
+      };
+    case "CHANGE_GENDER":
+      return {
+        ...filterState,
+        gender: action.payload.target.value,
+        filter: [...filterState.filter, action.payload.target.value],
       };
     case "CHEKCBOX_CHECKED":
       return {
