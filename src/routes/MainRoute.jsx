@@ -5,7 +5,7 @@ import Home from "../pages/Home";
 // import NotMatch from "../pages/NotMatch";
 import Profile from "../pages/Profile";
 import SignIn from "../pages/SignIn";
-
+import NotFound from "../pages/NotFound";
 import { Provider } from "react-redux";
 import store from "../store";
 
@@ -18,7 +18,7 @@ const MainRoutes = () => {
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/profile" component={Profile} />
           {/* <Route exact path="/news-topic/:topic" component={Home} /> */}
-          {/* <Route component={NotMatch} /> */}
+          <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
     </Provider>
