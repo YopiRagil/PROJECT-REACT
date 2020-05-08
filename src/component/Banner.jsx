@@ -15,7 +15,13 @@ const Banner = (props) => {
 
   // render() {
   return (
-    <div className="rounded float-right container mt-5" id="banner-div">
+    <div
+      className="rounded float-right container mt-5"
+      id="banner-div"
+      style={{
+        boxSizing: "border-box",
+      }}
+    >
       {/* <Link value="bali" onClick={(e)=> this.props.asa(e)} */}
       <img
         className="img-fluid"
@@ -23,16 +29,22 @@ const Banner = (props) => {
         src={props.img}
         alt="city banner"
         id="city-banner"
+        style={{
+          display: "block",
+          width: "auto",
+          height: "auto",
+          paddingBottom: "20px",
+        }}
       />
       {/* </Link> */}
       <div className="text-block">
-        <h1
+        <h3
           className="display-4"
-          style={{ fontSize: "30px" }}
+          style={{ fontSize: "7vmin", fontWeight: "bolder" }}
           id="city-banner-name"
         >
           {props.img.tags}
-        </h1>
+        </h3>
       </div>
     </div>
   );

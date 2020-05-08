@@ -22,7 +22,13 @@ export default function productReducer(state = initialState, action) {
     case "SUCCESS_GET_PRODUCT":
       return {
         ...state,
-        listProduct: [...state.listProduct, action.payload],
+        listProduct: [...state.listProduct, ...action.payload],
+      };
+
+    case "RESET_LIST_PRODUCT":
+      return {
+        ...state,
+        listProduct: [],
       };
 
     case "SUCCESS_GET_WEATHER":

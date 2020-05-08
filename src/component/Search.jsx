@@ -7,14 +7,19 @@ const Search = (props) => {
     <div className="col-sm-10">
       <form className="form-inline my-2" action="#">
         <input
-          className="form-control search-bar-nav mr-0"
+          className="form-control my-lg-auto mr-sm-2"
           type="text"
           name="search"
           placeholder="masukkan destinasi tujuan anda"
           onChange={props.doSearch}
           // value=
+
           aria-label="Search"
-          style={{ width: "86%" }}
+          type="text"
+          style={{ fontWeight: "lighter" }}
+          placeholder="masukkan nama kota/ tujuan destinasi"
+          onChange={props.doSearch}
+          style={{ width: "80%" }}
         />
         <button
           className="btn my-2 my-sm-0"

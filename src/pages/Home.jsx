@@ -26,6 +26,40 @@ class Home extends Component {
   }
   render() {
     console.log("cek2", this.props.img.jumbotronImg);
+    console.warn("props data", this.props.data);
+
+    let listProduct = this.props.data;
+    const listProductFilter = this.props.data.filter((item) => {
+      if (item.title.toLowerCase().includes(...this.props.filter)) {
+        return item;
+      }
+      return false;
+    });
+
+    if (this.props.filter.length !== 0) {
+      listProduct = listProductFilter;
+    }
+    if (this.props.rate) {
+      listProduct = listProduct.filter((item) => {
+        if (item.rating >= this.props.rate) {
+          return item;
+        }
+        return false;
+      });
+    }
+
+    if (this.props.minPrice && this.props.maxPrice) {
+      listProduct = listProduct.filter((item) => {
+        // console.log("harga", item.price.substr(1));
+        if (
+          this.props.minPrice <= +item.price.slice(1) &&
+          +item.price.slice(1) <= this.props.maxPrice
+        ) {
+          return item;
+        }
+        return false;
+      });
+    }
     return (
       <div>
         <Header
@@ -34,8 +68,11 @@ class Home extends Component {
           {...this.props}
         />
         <div className="text-center mt-4" id="recommendation-title">
-          <h1>OUR RECOMMENDATIONS</h1>
+          <p style={{ fontWeight: "bolder", fontSize: "8vmin" }}>
+            OUR RECOMMENDATIONS
+          </p>
         </div>
+       <div className="container-fluid">
         <div className="row">
           <div className="col-sm-4">
             <Sidebar
@@ -56,13 +93,27 @@ class Home extends Component {
               {...this.props}
             />
           </div>
-          {/* {this.props.img.} */}
-          <div className="col-sm-8">
-            <Banner img={this.props.img} {...this.props} />
-            <ProductResult />
-            <ProductResult />
-            <ProductResult />
-          </div>
+          {this.props.product.search.length == 0 ? (
+            <div className="col-sm-8">
+              <Banner img={this.props.img} {...this.props} />
+            </div>
+          ) : (
+            <div className="col-sm-8">
+              <Banner img={this.props.img} {...this.props} />
+
+              {listProduct.map((item, index) => (
+                <ProductResult
+                  title={listProduct[index].title}
+                  imageUrl={listProduct[index].imageUrl}
+                  price={listProduct[index].price}
+                  rating={listProduct[index].rating}
+                  detailPageURL={listProduct[index].detailPageURL}
+                />
+              ))}
+              {/* <ProductResult />
+              <ProductResult /> */}
+            </div>
+          )}
         </div>
       </div>
       // console.warn("props", this.props);
